@@ -3,67 +3,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GpsStation</title>
-
+    <title>@ViewData["Title"] GPStation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
-    @RenderSection("Estilo", false)
-    @RenderSection("Script", false)
-
+    <link rel="stylesheet" href="~/css/mapa.css" asp-append-version="true" />
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Projeto 1</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
 
-    @{
-        string currentAction = ViewContext.RouteData.Values["controller"].ToString();
-        if (currentAction == "Home")
-        {
-            @RenderBody()
-        }
-        else 
-        {
-            <div class="pagina">
-                @RenderBody()
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Alunos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Alunos" asp-action="Listar">Listar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Alunos" asp-action="Gravar">Gravar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Alunos" asp-action="Excluir">Excluir</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Funcionários
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Funcionarios" asp-action="Listar">Listar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Funcionarios" asp-action="Gravar">Gravar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Funcionarios" asp-action="Excluir">Excluir</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Livros
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Livros" asp-action="Listar">Listar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Livros" asp-action="Gravar">Gravar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Livros" asp-action="Excluir">Excluir</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        }
-    }
-
-    <div class="navigation">
-        <div class="menuToggle"></div>
-        <ul>
-            <li class="list active" style="--clr:rgb(244, 67, 54);">
-                <a href="/Home/">
-                    <img class="icon" src="/gifs/mapa.png" gif="/gifs/mapa.gif" id="mapa">
-                    <span class="text">Mapa</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(255, 161, 23);">
-                <a href="/Andarilho/">
-                    <img class="icon" src="/gifs/cliente_parado.png" gif="/gifs/cliente.gif" alt="">
-                    <span class="text">Usuários</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(15, 199, 15);">
-                <a href="/Relatorio/">
-                    <img class="icon" src="/gifs/jornal.png" gif="/gifs/jornal.gif" alt="">
-                    <span class="text">Relatório</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(33, 150, 243);">
-                <a href="/Sobre/">
-                    <img class="icon" src="/gifs/em-formacao.png" gif="/gifs/em-formacao.gif" alt="">
-                    <span class="text">Sobre</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:hwb(280 27% 9%);">
-                <a href="/Configuracao/">
-                    <img class="icon" src="/gifs/configuracoes.png" gif="/gifs/configuracoes.gif" alt="">
-                    <span class="text">Configurações</span>
-                </a>
-            </li>
-        </ul>
+           
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
+   
 
-    <script src="~/js/site.js"></script>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Ftec.SistemasWEB.GPSStation.projeto1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--SCRIPT QUE CHAMA A API DO GOOGLE MAPS-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=xxxxxx&callback=initMap" async defer></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

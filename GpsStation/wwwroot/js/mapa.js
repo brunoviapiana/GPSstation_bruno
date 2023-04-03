@@ -1,6 +1,6 @@
 
 // Cria o mapa
-var map_55bbce51b6ab60a6b4c85363dc2540ad = L.map(
+/*var map_55bbce51b6ab60a6b4c85363dc2540ad = L.map(
     "map_55bbce51b6ab60a6b4c85363dc2540ad",
     {
         center: [0, 0],
@@ -41,5 +41,15 @@ var geojsonLayer = L.geoJSON(myGeojsonData).addTo(map_55bbce51b6ab60a6b4c85363dc
 var marker = L.marker([-23.5505, -46.6333]).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
 
 // Adiciona um pop-up ao marcador
-marker.bindPopup("<b>São Paulo</b><br>Capital do estado de São Paulo.").openPopup();
+marker.bindPopup("<b>São Paulo</b><br>Capital do estado de São Paulo.").openPopup();*/
 
+//-----------------------------------------------------------------------------------------------------
+let map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
+}
+window.initMap = initMap;
+//-----------------------------------------------------------------------------------------------------
