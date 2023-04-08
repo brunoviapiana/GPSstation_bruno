@@ -10,9 +10,9 @@
             Ativo = false; 
         }
 
-        Guid Id_dispositivo { get; set; }
+        public Guid Id_dispositivo { get; set; }
 
-        Guid IdUsuario { get; set; }
+        public Guid IdUsuario { get; set; }
         public string Nome { get; set; }
 
         public bool Ativo { get; set; }

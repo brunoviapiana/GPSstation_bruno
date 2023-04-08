@@ -49,8 +49,7 @@ marker.bindPopup("<b>São Paulo</b><br>Capital do estado de São Paulo.").openPopu
 // define as coordenadas da polyline
 var polylinePoints = [
     [51.505, -0.09],
-    [51.525, -0.3],
-    [51.49, -0.1]
+    [51.525, -0.3]
 ];
 
 // desenha as linhas no mapa
