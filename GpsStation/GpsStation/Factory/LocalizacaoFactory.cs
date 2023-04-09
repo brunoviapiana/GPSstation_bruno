@@ -11,9 +11,10 @@ namespace GpsStation.Factory
             {
                 localizacoes.Add(new LocalizacaoModel()
                 {
-                    Latitude = -29.165896 + 0.000008,
-                    Longitude = -51.183160 + 0.000009,
-                    Datahora = DateTime.Now,
+                    Latitude = -29.165896+i + 0.000008-i,
+                    Longitude = -51.183160+i + 0.000009-i,
+                    DataHora = DateTime.Now,
+                    IdDispositivo = Guid.NewGuid()
                 }) ;
             }
             return localizacoes;

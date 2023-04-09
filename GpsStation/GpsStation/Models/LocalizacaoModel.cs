@@ -4,7 +4,8 @@
     {
         public double Latitude { get; set; }
         public double Longitude { get; set;}
-        public DateTime Datahora { get; set;}
+        public DateTime DataHora { get; set;}
+        public Guid IdDispositivo { get; set;}
 
     }
 }

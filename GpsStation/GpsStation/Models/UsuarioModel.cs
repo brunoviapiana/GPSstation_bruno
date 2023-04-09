@@ -4,10 +4,10 @@
     {
         public UsuarioModel()
         {
-            Administrador = true;
-            Nome = "teste";//string.Empty;
-            Senha = "123"; //string.Empty;
-            Id_usuario = new Guid();
+            //Administrador = true;
+            //Nome = "teste";//string.Empty;
+            //Senha = "123"; //string.Empty;
+            //Id_usuario = new Guid();
         }
 
         public bool Administrador { get; set; }

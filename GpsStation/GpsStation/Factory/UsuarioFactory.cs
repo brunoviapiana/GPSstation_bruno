@@ -10,12 +10,12 @@ namespace GpsStation.Factory
             for (int i = 0; i < numeroObjetos; i++)
             {
                 usuarios.Add(new UsuarioModel()
-                { 
-                Administrador = true,
-                Nome = "teste",//string.Empty;
-                Senha = "123", //string.Empty;
-                Id_usuario = new Guid()
-            });
+                {
+                    Administrador = true,
+                    Nome = "",//string.Empty,
+                    Senha = "",//string.Empty,
+                    Id_usuario = Guid.NewGuid()
+                }); 
             }
             return usuarios;
         }

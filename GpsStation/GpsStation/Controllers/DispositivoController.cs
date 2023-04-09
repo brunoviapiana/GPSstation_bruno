@@ -1,4 +1,5 @@
 ﻿using GpsStation.Models;
+using GpsStation.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GpsStation.Controllers
@@ -8,8 +9,10 @@ namespace GpsStation.Controllers
         DispositivoModel dispositivo = new();
         public IActionResult Index()
         {
-            return View(dispositivo);
-        }
+			DispositivoRepository dispositivoRepository = new DispositivoRepository();
+			ViewBag.dispositivos = dispositivoRepository.ListarDispositivo();
+			return View();
+		}
 
         public IActionResult Excluir()
         {
@@ -18,7 +21,7 @@ namespace GpsStation.Controllers
 
         public IActionResult Cadastro()
         {
-            return View(dispositivo);
+            return View();
         }
     }
 }

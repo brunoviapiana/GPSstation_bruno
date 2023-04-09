@@ -17,8 +17,9 @@
 <div class="text-center">
     <h1 class="display-4">CADASTRO DE USUÁRIO</h1>
 
-    <!--Formulário de login, submit direciona para controller Login, método Confirmarlogin-->
-    <form action="/Usuario/gravar" method="POST">
+    
+    <form action="\Usuario\gravar" method="POST">
+
         <label>Nome:</label>
         <input type="text" id="nome" name="usuario.nome" value="@ViewBag.usuario.Nome">
 
@@ -26,7 +27,10 @@
         <input type="password" id="senha" name="usuario.senha" value="@ViewBag.usuario.Senha">
 
         <label>Administrador</label>
-        <input type="checkbox" id="administrador" name="usuario.administrador" value="@ViewBag.usuario.Administrador">
+        <input type="text" id="administrador" name="usuario.administrador" value="@ViewBag.usuario.Administrador">
+
+        <label>Código</label>
+        <input type="text" id="Id_usuario" name="usuario.Id_usuario" value="@ViewBag.usuario.Id_usuario">
         
         <button type="submit">SALVAR</button>
     </form>

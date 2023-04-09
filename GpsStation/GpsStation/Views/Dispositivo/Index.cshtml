@@ -8,15 +8,33 @@
 <div class="text-center">
     <h1 class="display-4">Dispositivos</h1>
     <p>Lista de Dispositivos</p>
-
-    <p>Nome: @Model.Nome</p>
-    <p>status: @Model.Ativo</p>
     
 </div>
 
 
-<a asp-controller="Relatorio" asp-action="Index">Últimos registros</a>
-<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
-<a asp-controller="Dispositivo" asp-action="Excluir">Excluir</a>
-<a asp-controller="Dispositivo" asp-action="Cadastro">Editar</a>
-<a asp-controller="Dispositivo" asp-action="Cadastro">Inserir</a>
+
+<table>
+	<tr>
+		<th>Dispositivo</th>
+		<th>Status</th>
+	</tr>
+	@{
+		foreach (var item in ViewBag.dispositivos)
+		{
+			<tr>
+				<td>@item.Nome</td>
+				<td>@item.Ativo</td>
+				<td>
+					<a asp-controller="Relatorio" asp-action="Index">Últimos registros</a>
+					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
+					<a asp-controller="Dispositivo" asp-action="Excluir">Excluir</a>
+					<a asp-controller="Dispositivo" asp-action="Cadastro">Editar</a>
+					
+				</td>
+
+			</tr>
+		}
+	}
+
+</table>
+<a asp-controller="Dispositivo" asp-action="Cadastro">Novo Dispositivo</a>
