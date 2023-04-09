@@ -16,7 +16,8 @@ namespace GpsStation.Repository
         public List<UsuarioModel> ListarUsuario()
         {
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
-            usuarios = UsuarioFactory.GeradorMoqUsuarios(5);
+            usuarios=UsuarioModel.GetUsuarios();
+            //usuarios = UsuarioFactory.GeradorMoqUsuarios(5);
             return usuarios;
         }
 
